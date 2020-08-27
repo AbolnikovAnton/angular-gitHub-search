@@ -10,20 +10,34 @@ exports.AppModule = void 0;
 var platform_browser_1 = require("@angular/platform-browser");
 var core_1 = require("@angular/core");
 var slider_1 = require("@angular/material/slider");
+var toolbar_1 = require("@angular/material/toolbar");
+var input_1 = require("@angular/material/input");
+var card_1 = require("@angular/material/card");
+var button_1 = require("@angular/material/button");
+var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var animations_1 = require("@angular/platform-browser/animations");
+var toolbar_component_1 = require("./toolbar/toolbar.component");
+var search_component_1 = require("./search/search.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             declarations: [
-                app_component_1.AppComponent
+                app_component_1.AppComponent,
+                toolbar_component_1.ToolbarComponent,
+                search_component_1.SearchComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
                 animations_1.BrowserAnimationsModule,
-                slider_1.MatSliderModule
+                slider_1.MatSliderModule,
+                toolbar_1.MatToolbarModule,
+                input_1.MatInputModule,
+                card_1.MatCardModule,
+                button_1.MatButtonModule,
+                forms_1.FormsModule
             ],
             providers: [],
             bootstrap: [app_component_1.AppComponent]

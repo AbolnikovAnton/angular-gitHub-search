@@ -1,0 +1,34 @@
+<div class="search__block">
+  <div class="search__input">
+
+    <h1>Start type GitHub user name</h1>
+    <mat-form-field class="example-full-width">
+      <mat-label>Type here user name</mat-label>
+      <input matInput
+        placeholder="Type here user name"
+        [(ngModel)]="searchStr"
+        (ngModelChange)="handleChange()">
+      <mat-error>
+
+      </mat-error>
+    </mat-form-field>
+
+  </div>
+
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title></mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="" alt="">
+    <mat-card-content>
+      <ul>
+        <li></li>
+      </ul>
+    </mat-card-content>
+    <mat-card-actions class="center">
+      <button target="blank" mat-raised-button color="accent">View Profile</button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>
