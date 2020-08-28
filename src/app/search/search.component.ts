@@ -1,3 +1,4 @@
+import { UsersService } from './../users.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,12 +9,19 @@ import { Component, OnInit } from '@angular/core';
 export class SearchComponent implements OnInit {
 
   searchStr = '';
+  minLenght = 3;
+  isLoaded = false;
+  user;
 
-  constructor() { }
+  constructor(private service: UsersService) { }
 
   handleChange(){
-    console.log(this.searchStr);
-
+    if(this.minLenght <= this.searchStr.length){
+      this.service.getUser(this.searchStr)
+      .subscribe(user=>{
+        this.user = user;
+      });
+    }
   }
 
   ngOnInit(): void {

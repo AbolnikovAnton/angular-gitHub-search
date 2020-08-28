@@ -9,11 +9,20 @@ exports.__esModule = true;
 exports.SearchComponent = void 0;
 var core_1 = require("@angular/core");
 var SearchComponent = /** @class */ (function () {
-    function SearchComponent() {
+    function SearchComponent(service) {
+        this.service = service;
         this.searchStr = '';
+        this.minLenght = 3;
+        this.isLoaded = false;
     }
     SearchComponent.prototype.handleChange = function () {
-        console.log(this.searchStr);
+        var _this = this;
+        if (this.minLenght <= this.searchStr.length) {
+            this.service.getUser(this.searchStr)
+                .subscribe(function (user) {
+                _this.user = user;
+            });
+        }
     };
     SearchComponent.prototype.ngOnInit = function () {
     };

@@ -1,16 +1,18 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { UsersService } from './users.service';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatInputModule } from '@angular/material/input';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { FormsModule } from '@angular/forms';
-
-import { AppComponent } from './app.component';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToolbarComponent } from './toolbar/toolbar.component';
+import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+
 
 @NgModule({
   declarations: [
@@ -26,9 +28,10 @@ import { SearchComponent } from './search/search.component';
     MatInputModule,
     MatCardModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

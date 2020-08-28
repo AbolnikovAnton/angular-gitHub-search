@@ -7,18 +7,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 exports.AppModule = void 0;
-var platform_browser_1 = require("@angular/platform-browser");
+var users_service_1 = require("./users.service");
+var http_1 = require("@angular/common/http");
 var core_1 = require("@angular/core");
+var forms_1 = require("@angular/forms");
+var button_1 = require("@angular/material/button");
+var card_1 = require("@angular/material/card");
+var input_1 = require("@angular/material/input");
 var slider_1 = require("@angular/material/slider");
 var toolbar_1 = require("@angular/material/toolbar");
-var input_1 = require("@angular/material/input");
-var card_1 = require("@angular/material/card");
-var button_1 = require("@angular/material/button");
-var forms_1 = require("@angular/forms");
-var app_component_1 = require("./app.component");
+var platform_browser_1 = require("@angular/platform-browser");
 var animations_1 = require("@angular/platform-browser/animations");
-var toolbar_component_1 = require("./toolbar/toolbar.component");
+var app_component_1 = require("./app.component");
 var search_component_1 = require("./search/search.component");
+var toolbar_component_1 = require("./toolbar/toolbar.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -37,9 +39,10 @@ var AppModule = /** @class */ (function () {
                 input_1.MatInputModule,
                 card_1.MatCardModule,
                 button_1.MatButtonModule,
-                forms_1.FormsModule
+                forms_1.FormsModule,
+                http_1.HttpClientModule
             ],
-            providers: [],
+            providers: [users_service_1.UsersService],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

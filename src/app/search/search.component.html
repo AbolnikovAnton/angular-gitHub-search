@@ -7,15 +7,16 @@
       <input matInput
         placeholder="Type here user name"
         [(ngModel)]="searchStr"
+        [minlength]="minLenght"
         (ngModelChange)="handleChange()">
       <mat-error>
-
+        Min lenght is {{ minLenght }}. Now it is {{ searchStr.length }}
       </mat-error>
     </mat-form-field>
 
   </div>
 
-  <mat-card class="card">
+  <mat-card class="card" *ngIf="isLoaded">
     <mat-card-header>
       <mat-card-title></mat-card-title>
       <mat-card-subtitle></mat-card-subtitle>
