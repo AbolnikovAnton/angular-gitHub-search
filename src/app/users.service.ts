@@ -15,13 +15,7 @@ export class UsersService {
       )
       .pipe(
         map((response: Response) => {
-          try {
-            console.log(response);
-
             return response;
-          } catch (error) {
-            console.error(error);
-          }
         })
       );
   }
