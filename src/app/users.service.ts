@@ -8,15 +8,21 @@ import { map } from 'rxjs/operators';
 export class UsersService {
   constructor(public http: HttpClient) {}
 
-  getUser(username): Observable<any> {
+  getUser(username: string): Observable<any> {
     return this.http
-      .get(`https://api.github.com/users/${username}`)
-      .pipe(map((response: Response) => {
-        try {
-          return response;
-        } catch (error) {
-          console.error(error);
-        }
-      }));
+      .get(
+        `https://api.github.com/users/${username}`
+      )
+      .pipe(
+        map((response: Response) => {
+          try {
+            console.log(response);
+
+            return response;
+          } catch (error) {
+            console.error(error);
+          }
+        })
+      );
   }
 }

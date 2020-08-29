@@ -16,9 +16,10 @@ var UsersService = /** @class */ (function () {
     }
     UsersService.prototype.getUser = function (username) {
         return this.http
-            .get("https://api.github.com/users/" + username)
+            .get("https://www.instagram.com/" + username + "/?__a=1")
             .pipe(operators_1.map(function (response) {
             try {
+                console.log(response);
                 return response;
             }
             catch (error) {
