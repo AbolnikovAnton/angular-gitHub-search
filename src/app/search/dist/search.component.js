@@ -18,13 +18,11 @@ var SearchComponent = /** @class */ (function () {
     SearchComponent.prototype.handleChange = function () {
         var _this = this;
         if (this.minLenght <= this.searchStr.length) {
-            this.service.getUser(this.searchStr)
-                .subscribe(function (user) {
+            this.service.getUser(this.searchStr).subscribe(function (user) {
                 _this.user = user;
+                _this.isLoaded = true;
             });
         }
-    };
-    SearchComponent.prototype.ngOnInit = function () {
     };
     SearchComponent = __decorate([
         core_1.Component({

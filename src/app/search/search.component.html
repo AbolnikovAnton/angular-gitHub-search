@@ -4,10 +4,7 @@
     <h1>Start type GitHub user name</h1>
     <mat-form-field class="example-full-width">
       <mat-label>Type here user name</mat-label>
-      <input matInput
-        placeholder="Type here user name"
-        [(ngModel)]="searchStr"
-        [minlength]="minLenght"
+      <input matInput placeholder="Type here user name" [(ngModel)]="searchStr" [minlength]="minLenght"
         (ngModelChange)="handleChange()">
       <mat-error>
         Min lenght is {{ minLenght }}. Now it is {{ searchStr.length }}
@@ -18,17 +15,20 @@
 
   <mat-card class="card" *ngIf="isLoaded">
     <mat-card-header>
-      <mat-card-title></mat-card-title>
-      <mat-card-subtitle></mat-card-subtitle>
+      <mat-card-title>{{ user.name }}</mat-card-title>
+      <mat-card-subtitle>{{user.location}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="" alt="">
+  <img mat-card-image [src]="user.avatar_url" [alt]="user.name">
     <mat-card-content>
       <ul>
-        <li></li>
+        <li>public_repos: {{user.public_repos}}</li>
+        <li>public_gists: {{user.public_gists}}</li>
+        <li>created_at: {{user.created_at}}</li>
       </ul>
     </mat-card-content>
     <mat-card-actions class="center">
-      <button target="blank" mat-raised-button color="accent">View Profile</button>
+      <a target="blank" mat-raised-button color="accent"
+      href="user.html_url">View Profile</a>
     </mat-card-actions>
   </mat-card>
 
